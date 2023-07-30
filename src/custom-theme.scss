@@ -1,0 +1,84 @@
+
+
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$primary: mat.define-palette(mat.$green-palette);
+$accent: mat.define-palette(mat.$yellow-palette);
+$warn: mat.define-palette(mat.$orange-palette);
+$danger: mat.define-palette(mat.$red-palette);
+
+
+
+$theme: mat.define-light-theme((
+    color: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+      danger : $danger,
+    )
+  ));
+ 
+  $foreground : map-get($theme, foreground);
+  $background : map-get($theme, background);
+  
+  @include mat.all-component-themes($theme);
+
+  
+ 
+  .Primary{
+    color: mat.get-color-from-palette($primary,lighter);
+  };
+  .Accent{
+    color: mat.get-color-from-palette($accent,500);
+  };
+  .warn{
+    color: mat.get-color-from-palette($danger,darker);
+  }
+
+  .bg{
+    background-color: mat.get-color-from-palette($foreground,text);
+  }
+
+  .text-light{
+    color: mat.get-color-from-palette($background, card);
+  }
+  .my-class {
+    // @include mat.elevation-transition();
+    @include mat.elevation(10);
+  }
+  
+
+// // Define the palettes for your theme using the Material Design palettes available in palette.scss
+// // (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// // hue. Available color palettes: https://material.io/design/color/
+// $angular-matarial-primary: mat.define-palette(mat.$indigo-palette);
+// $angular-matarial-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// // The warn palette is optional (defaults to red).
+// $angular-matarial-warn: mat.define-palette(mat.$red-palette);
+
+// // Create the theme object. A theme consists of configurations for individual
+// // theming systems such as "color" or "typography".
+// $angular-matarial-theme: mat.define-light-theme((
+//   color: (
+//     primary: $angular-matarial-primary,
+//     accent: $angular-matarial-accent,
+//     warn: $angular-matarial-warn,
+//   )
+// ));
+
+// // Include theme styles for core and each component used in your app.
+// // Alternatively, you can import and @include the theme mixins for each component
+// // that you are using.
+// @include mat.all-component-themes($angular-matarial-theme);define-light-theme, define-dark-theme,
+  // define-palette, get-contrast-color-from-palette, get-color-from-palette,
+  // get-color-config, get-typography-config, get-density-config,
+
+// $red-palette, $pink-palette, $indigo-palette,
+//   $purple-palette, $deep-purple-palette, $blue-palette, $light-blue-palette, $cyan-palette,
+//   $teal-palette, $green-palette, $light-green-palette, $lime-palette, $yellow-palette,
+//   $amber-palette, $orange-palette, $deep-orange-palette, $brown-palette, $grey-palette,
+//   $gray-palette, $blue-grey-palette, $blue-gray-palette, $light-theme-background-palette,
+//   $dark-theme-background-palette, $light-theme-foreground-palette, $dark-theme-foreground-palette;

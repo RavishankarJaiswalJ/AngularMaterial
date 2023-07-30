@@ -1,0 +1,45 @@
+<!-- <button>Demo</button>
+<button>Demo2</button>
+<button>Demo3</button> -->
+
+<div class="wrapper">
+    <div class="row component">
+        <div class="col-2" matRipple matRippleCentere="true">
+            <mat-card>
+                <mat-icon>smart_button</mat-icon>
+                Buttons
+            </mat-card>
+        </div>
+        <div class="col-2" matRipple matRippleRadiu="5">
+            <mat-card>
+                <mat-icon matRipple>smart_button</mat-icon>
+                Buttons2
+            </mat-card>
+        </div>
+        <div class="col-2" matRipple [matRippleColor]="'red'">
+            <mat-card>
+                <mat-icon > smart_button</mat-icon>
+                Buttons3
+            </mat-card>
+        </div>
+        <div class="col-2" matRipple [matRippleColor]="myColor">
+            <mat-card>
+                <mat-icon>smart_button</mat-icon>
+                Buttons4
+            </mat-card>
+        </div>
+        
+    </div>
+
+</div>
+<div>
+    <div class="example-ripple-container mat-elevation-z4"
+     matRipple
+     [matRippleCentered]="centered"
+     [matRippleDisabled]="disabled"
+     [matRippleUnbounded]="unbounded"
+     [matRippleRadius]="radius"
+     [matRippleColor]="color">
+  Click me
+</div>
+</div>

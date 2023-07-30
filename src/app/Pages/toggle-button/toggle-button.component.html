@@ -1,0 +1,124 @@
+<div class="container">
+    <h1> Toggle Buttons</h1>
+    <mat-divider></mat-divider>
+    <div class="btn-wrapped mt-3">
+        <mat-card class="btn-card">
+            <h4>Basic Buttons</h4>
+            <div class="btn-row">
+                <mat-button-toggle #mytoggle (change)="onSinglebuttonToggle($event)">{{mytoggle.checked?
+                    'Active':'Inactive'}}</mat-button-toggle>
+                {{mytoggle.checked}}
+
+
+                <!-- <button mat-button-toggle>subscribe TechGuru</button>
+          <button mat-button-toggle color="primary">primary</button>
+          <button mat-button-toggle color="accent">accent</button>
+          <button mat-button-toggle color="warn">warn</button>
+          <button mat-button-toggle color="warn" disabled="true">warn</button>
+          <a mat-button-toggle color="primary" href="https://www.w3schools.com/">Link</a> -->
+            </div>
+            <div></div>
+        </mat-card>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Toggle group Buttons</h1>
+    <mat-divider></mat-divider>
+    <div class="btn-wrapped mt-3">
+        <mat-card class="btn-card">
+            <h4>Basic Buttons</h4>
+            <div class="btn-row">
+                <mat-button-toggle-group #grp="matButtonToggleGroup" (change)="onchangealignment($event)">
+                    <!-- <mat-button-toggle  #mytoggle (change)="onSinglebuttonToggle($event)">{{mytoggle.checked? 'Active':'Inactive'}}</mat-button-toggle>
+                {{mytoggle.checked}} -->
+                    <mat-button-toggle value="left"> <mat-icon>format_align_left</mat-icon></mat-button-toggle>
+                    <mat-button-toggle value="center"> <mat-icon>format_align_center</mat-icon></mat-button-toggle>
+                    <mat-button-toggle value="right"><mat-icon>format_align_right</mat-icon></mat-button-toggle>
+                    <mat-button-toggle
+                        value="justify"><mat-icon><mat-icon>format_align_justify</mat-icon></mat-icon></mat-button-toggle>
+                    {{grp.value}}
+                </mat-button-toggle-group>
+                <br>
+                <div>
+                    <p [style.text-align]="grp.value">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                        alias sed fugit eius. Et quaerat possimus aliquam reiciendis blanditiis repudiandae, voluptates
+                        ut, amet magni excepturi omnis fuga quos voluptas aliquid quas ea hic neque suscipit.</p>
+                </div>
+
+            </div>
+            <div></div>
+        </mat-card>
+    </div>
+</div>
+
+<div class="container">
+    <h1>multiple selection in toggle</h1>
+    <mat-divider></mat-divider>
+    <div class="btn-wrapped mt-3">
+        <mat-card class="btn-card">
+            <h4>Basic Buttons</h4>
+            <div class="btn-row">
+                <mat-button-toggle-group #grp2="matButtonToggleGroup" multiple>
+
+                    <mat-button-toggle value="Angular">Angular</mat-button-toggle>
+                    <mat-button-toggle value="React">React</mat-button-toggle>
+                    <mat-button-toggle value="vue">vue</mat-button-toggle>
+                    <mat-button-toggle value="java">java</mat-button-toggle>
+                    <mat-button-toggle value="next">next</mat-button-toggle>
+                    {{grp2.value}}
+                </mat-button-toggle-group>
+                <br>
+                <div>
+                    <p [style.text-align]="grp.value">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                        alias sed fugit eius. Et quaerat possimus aliquam reiciendis blanditiis repudiandae, voluptates
+                        ut, amet magni excepturi omnis fuga quos voluptas aliquid quas ea hic neque suscipit.</p>
+                </div>
+
+            </div>
+            <div></div>
+        </mat-card>
+    </div>
+</div>
+
+<div class="container">
+    <h1>template driven form</h1>
+    <mat-divider></mat-divider>
+    <div class="btn-wrapped mt-3">
+        <mat-card class="btn-card">
+            <h4>Basic Buttons</h4>
+            <div class="btn-row">
+                <h4>Button Toggle inside of a Template-driven form</h4>
+                <mat-button-toggle-group [(ngModel)]="fontStyle">
+                    <mat-button-toggle value="bold">Bold</mat-button-toggle>
+                    <mat-button-toggle value="italic">Italic</mat-button-toggle>
+                    <mat-button-toggle value="underline">Underline</mat-button-toggle>
+                </mat-button-toggle-group>
+                <p>Chosen value is {{fontStyle}}</p>
+
+            </div>
+            <div></div>
+        </mat-card>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Reactive form</h1>
+    <mat-divider></mat-divider>
+    <div class="btn-wrapped mt-3">
+        <mat-card class="btn-card">
+            <h4>Basic Buttons</h4>
+            <div class="btn-row">
+                <h4>Button Toggle inside of a Reactive form</h4>
+                <mat-button-toggle-group [formControl]="fontStyleControl">
+                    <mat-button-toggle value="bold">Bold</mat-button-toggle>
+                    <mat-button-toggle value="italic">Italic</mat-button-toggle>
+                    <mat-button-toggle value="underline">Underline</mat-button-toggle>
+                </mat-button-toggle-group>
+                <p>Chosen value is {{fontStyleControl.value}}</p>
+
+            </div>
+            <div></div>
+        </mat-card>
+    </div>
+</div>

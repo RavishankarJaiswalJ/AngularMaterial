@@ -1,0 +1,13 @@
+
+#btn-card{
+    width: calc(30%-20px);
+    margin: 0 5px 10px;
+};
+#btn-row{
+    display:flex;
+
+}
+button{
+    margin-right: .3rem;
+
+}
